@@ -32,13 +32,18 @@ public class SongCreation : MonoBehaviour
     int cardTalentSing, cardTalentGuitar, cardTalentBass, cardTalentDrums;
     public GameObject gameManager;
     public int totalFinalPoints;
-    public Button yes, no; 
+    public Button yes, no, mainMenu;
+    public int songCreated;
+    public GameObject[] cards;
+    public Text[] titles;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         yes.onClick.AddListener(ButtonYesClicked);
         no.onClick.AddListener(ButtonNoCliced);
+        mainMenu.onClick.AddListener(ButtonMainMenu);
     }
 
     // Update is called once per frame
@@ -62,6 +67,8 @@ public class SongCreation : MonoBehaviour
             genere = choises[0].value;
             theme = choises[1].value;
             songName = songInput.text;
+            titles[songCreated].text = songName;
+           
 
             if (genere == 0 && theme == 2)
             {
@@ -118,6 +125,28 @@ public class SongCreation : MonoBehaviour
     {
         windows[0].SetActive(true);
         windows[1].SetActive(false);
+    }
+
+    void ButtonMainMenu()
+    {
+        windows[2].SetActive(false);
+        windows[3].SetActive(true);
+        cards[0].GetComponent<MoveCard>().songCreated();
+        cards[1].GetComponent<MoveCard>().songCreated();
+        cards[2].GetComponent<MoveCard>().songCreated();
+        cards[3].GetComponent<MoveCard>().songCreated();
+        cards[4].GetComponent<MoveCard>().songCreated();
+        cards[5].GetComponent<MoveCard>().songCreated();
+        cards[6].GetComponent<MoveCard>().songCreated();
+        cards[7].GetComponent<MoveCard>().songCreated();
+        cards[8].GetComponent<MoveCard>().songCreated();
+        cards[9].GetComponent<MoveCard>().songCreated();
+        cards[10].GetComponent<MoveCard>().songCreated();
+        cards[11].GetComponent<MoveCard>().songCreated();
+        cards[12].GetComponent<MoveCard>().songCreated();
+        cards[13].GetComponent<MoveCard>().songCreated();
+        cards[14].GetComponent<MoveCard>().songCreated();
+        cards[15].GetComponent<MoveCard>().songCreated();
     }
 }
 

@@ -61,22 +61,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\CardVariables.cs" />
-    <Compile Include="Assets\Scripts\CardVariables\Bass\Cris_Burtun.cs" />
-    <Compile Include="Assets\Scripts\CardVariables\Bass\Marina_Pineda.cs" />
-    <Compile Include="Assets\Scripts\CardVariables\Bass\Reeva_Little.cs" />
-    <Compile Include="Assets\Scripts\CardVariables\Bass\Richard_Powers.cs" />
-    <Compile Include="Assets\Scripts\CardVariables\Drums\Jaeden_Hastings.cs" />
-    <Compile Include="Assets\Scripts\CardVariables\Drums\Jay_Binberg.cs" />
-    <Compile Include="Assets\Scripts\CardVariables\Drums\Lilia_Cooke.cs" />
-    <Compile Include="Assets\Scripts\CardVariables\Drums\Sahra_Heath.cs" />
-    <Compile Include="Assets\Scripts\CardVariables\Guitar\Ellenor_Wright.cs" />
-    <Compile Include="Assets\Scripts\CardVariables\Guitar\Jim_Hendry.cs" />
-    <Compile Include="Assets\Scripts\CardVariables\Guitar\Mahira_Worthington.cs" />
-    <Compile Include="Assets\Scripts\CardVariables\Guitar\Phyllis_Blackmore.cs" />
-    <Compile Include="Assets\Scripts\CardVariables\Sing\Frody_Mercurial.cs" />
-    <Compile Include="Assets\Scripts\CardVariables\Sing\Harvie_Mcgee.cs" />
-    <Compile Include="Assets\Scripts\CardVariables\Sing\Joao_Devlin.cs" />
-    <Compile Include="Assets\Scripts\CardVariables\Sing\Kaycee_Sumner.cs" />
     <Compile Include="Assets\Scripts\ChangeView.cs" />
     <Compile Include="Assets\Scripts\ChooseCard.cs" />
     <Compile Include="Assets\Scripts\DropdownTest.cs" />
@@ -89,19 +73,19 @@
     <Compile Include="Assets\Scripts\SongCreation.cs" />
     <Compile Include="Assets\Scripts\Time.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/josep/OneDrive/Documentos/Videojoc Unity/ProjectBM/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/josep/Documents/GitHub/JLlimona_ProjectBM/ProjectBM/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/josep/OneDrive/Documentos/Videojoc Unity/ProjectBM/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/josep/Documents/GitHub/JLlimona_ProjectBM/ProjectBM/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/josep/OneDrive/Documentos/Videojoc Unity/ProjectBM/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/josep/Documents/GitHub/JLlimona_ProjectBM/ProjectBM/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/josep/OneDrive/Documentos/Videojoc Unity/ProjectBM/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/josep/Documents/GitHub/JLlimona_ProjectBM/ProjectBM/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>C:/Users/josep/OneDrive/Documentos/Videojoc Unity/ProjectBM/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>C:/Users/josep/Documents/GitHub/JLlimona_ProjectBM/ProjectBM/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -305,13 +289,13 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>C:/Users/josep/OneDrive/Documentos/Videojoc Unity/ProjectBM/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>C:/Users/josep/Documents/GitHub/JLlimona_ProjectBM/ProjectBM/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/Users/josep/OneDrive/Documentos/Videojoc Unity/ProjectBM/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/josep/Documents/GitHub/JLlimona_ProjectBM/ProjectBM/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>C:/Users/josep/OneDrive/Documentos/Videojoc Unity/ProjectBM/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>C:/Users/josep/Documents/GitHub/JLlimona_ProjectBM/ProjectBM/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

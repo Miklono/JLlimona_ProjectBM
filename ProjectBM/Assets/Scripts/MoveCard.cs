@@ -10,7 +10,7 @@ public class MoveCard : MonoBehaviour
     public Transform card;
     public Transform windows1;
     public Transform windows2;
-    public Button contract;
+    public GameObject contract;
     public Text contractText;
     public bool isContracted = false;
     public bool isOnCreation = false;
@@ -22,6 +22,7 @@ public class MoveCard : MonoBehaviour
     {
         Button btn = contract.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
+        
     }
 
     // Update is called once per frame
@@ -36,7 +37,18 @@ public class MoveCard : MonoBehaviour
         {
             isContracted = true;
             card.SetParent(windows1, false);
-            contractText.text = "Dismiss";
+            contract.SetActive(false);
+        }
+    }
+
+    public void songCreated()
+    {
+        if (isChoosed)
+        {
+            card.SetParent(windows1, false);
+            contract.SetActive(false);
+            isChoosed = false;
+            isOnCreation = false;
         }
     }
     

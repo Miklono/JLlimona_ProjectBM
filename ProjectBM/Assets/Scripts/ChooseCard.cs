@@ -93,8 +93,6 @@ public class ChooseCard : MonoBehaviour
     void CardChoosen(GameObject card)
     {
         card.GetComponent<MoveCard>().isChoosed = true;
-        cardTalent[i] = card.GetComponent<CardVariables>().talent;
-        i++;
     }
 
     void ChangStoG()
