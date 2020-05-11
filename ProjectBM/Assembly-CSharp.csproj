@@ -62,14 +62,14 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\CardVariables.cs" />
     <Compile Include="Assets\Scripts\ChangeView.cs" />
-    <Compile Include="Assets\Scripts\ChooseCard.cs" />
+    <Compile Include="Assets\Scripts\DiscCreation.cs" />
     <Compile Include="Assets\Scripts\DropdownTest.cs" />
     <Compile Include="Assets\Scripts\GameStart.cs" />
     <Compile Include="Assets\Scripts\MaxPointsSlider.cs" />
     <Compile Include="Assets\Scripts\MoveCard.cs" />
     <Compile Include="Assets\Scripts\NewGame.cs" />
-    <Compile Include="Assets\Scripts\Puntuation.cs" />
     <Compile Include="Assets\Scripts\ShowSliderValueTest.cs" />
+    <Compile Include="Assets\Scripts\SongChosseTest.cs" />
     <Compile Include="Assets\Scripts\SongCreation.cs" />
     <Compile Include="Assets\Scripts\Time.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">

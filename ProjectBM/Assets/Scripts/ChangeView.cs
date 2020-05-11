@@ -6,15 +6,24 @@ using UnityEngine.UI;
 public class ChangeView : MonoBehaviour
 {
     //Variables 
-    public Button changeToContract, changeToManagement, changeToCreation, changeToMenuC, changeToMenuM, changeToMenuCre, changeToSongC, changeToStat, changeToSSong, changeToMenuStat, changeToStatSong;
+    public Button changeToContract, changeToManagement, changeToCreation, changeToMenuC, changeToMenuM, changeToMenuCre, changeToSongC, changeToStat, changeToSSong, changeToMenuStat, changeToStatSong, changeToDiscC;
     //changeToMenuC = Contract Windos. changeToMenuM = Band Management. ChangeToMenuCre = Creation Windows
-    public GameObject mainWindow, contractWindow, managementWindow, creationWindow, songCWinwod, statWindow, songStat;
+    public GameObject mainWindow, contractWindow, managementWindow, creationWindow, songCWinwod, statWindow, songStat, SCWindow;
     public GameObject dropdownMenu;
     public Transform singCard, singCard1, singCard2, singCard3, guitarCard, guitarCard1, guitarCard2, guitarCard3, bassCard, bassCard1, bassCard2, bassCard3, drumCard, drumCard1, drumCard2, drumCard3;
     public GameObject singWindow, guitarWindow, bassWindow, drumWindow;
-    private bool isShowingC, isShowingM, isShowingCre, isShowingSC, isShowingStat, isShowingSSong;
+    public bool isShowingC, isShowingM, isShowingCre, isShowingSC, isShowingStat, isShowingSSong, isShowingDiscC;
     public GameObject gameManager;
     public GameObject[] buttons;
+    public int[] cardTalent = new int[4];
+    public int i;
+    public Button singButton, singButton1, singButton2, singButton3, guitarButton, guitarButton1, guitarButton2, guitarButton3, bassButton, bassButton1, bassButton2, bassButton3, drumButton, drumButton1, drumButton2, drumButton3;
+    public GameObject[] songCard;
+    public Button backButton, backCreation;
+    public bool[] isOnDiscCreation = new bool[28];
+    public GameObject discQText;
+    public Text songNumber, songText;
+    public Button createButton;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +40,8 @@ public class ChangeView : MonoBehaviour
         changeToMenuStat.onClick.AddListener(ChangeStat);
         changeToSSong.onClick.AddListener(ChangeSSong);
         changeToStatSong.onClick.AddListener(ChangeSSong);
+        changeToDiscC.onClick.AddListener(ChangeDiscC);
+        backCreation.onClick.AddListener(ChangeDiscC);
     }
 
     // Update is called once per frame
@@ -64,7 +75,8 @@ public class ChangeView : MonoBehaviour
     }
     void ChangeSCreation()
     {
-        gameManager.GetComponent<ChooseCard>().enabled = true;
+        i = 0;
+
         isShowingSC = !isShowingSC;
         songCWinwod.SetActive(isShowingSC);
         singWindow.SetActive(isShowingSC);
@@ -168,6 +180,91 @@ public class ChangeView : MonoBehaviour
             buttons[15].SetActive(true);
             drumCard3.GetComponent<MoveCard>().isOnCreation = true;
         }
+        if (singCard.GetComponent<MoveCard>().isOnCreation == true)
+        {
+            singCard.gameObject.SetActive(true);
+            singButton.GetComponent<Button>().onClick.RemoveAllListeners();
+            singButton.onClick.AddListener(delegate { CardChoosen(singCard.gameObject); ChangStoG(); });
+        }
+        if (singCard1.GetComponent<MoveCard>().isOnCreation == true)
+        {
+            singCard1.gameObject.SetActive(true);
+            singButton1.GetComponent<Button>().onClick.RemoveAllListeners();
+            singButton1.onClick.AddListener(delegate { CardChoosen(singCard1.gameObject); ChangStoG(); });
+            
+        }
+        if (singCard2.GetComponent<MoveCard>().isOnCreation == true)
+        {
+            singCard2.gameObject.SetActive(true);
+            singButton2.GetComponent<Button>().onClick.RemoveAllListeners();
+            singButton2.onClick.AddListener(delegate { CardChoosen(singCard2.gameObject); ChangStoG(); });
+        }
+        if (singCard3.GetComponent<MoveCard>().isOnCreation == true)
+        {
+            singCard3.gameObject.SetActive(true);
+            singButton3.GetComponent<Button>().onClick.RemoveAllListeners();
+            singButton3.onClick.AddListener(delegate { CardChoosen(singCard3.gameObject); ChangStoG(); });
+        }
+        if (guitarCard.GetComponent<MoveCard>().isOnCreation == true)
+        {
+            guitarButton.GetComponent<Button>().onClick.RemoveAllListeners();
+            guitarButton.onClick.AddListener(delegate { CardChoosen(guitarCard.gameObject); ChangeGtoB(); });
+        }
+        if (guitarCard1.GetComponent<MoveCard>().isOnCreation == true)
+        {
+            guitarButton1.GetComponent<Button>().onClick.RemoveAllListeners();
+            guitarButton1.onClick.AddListener(delegate { CardChoosen(guitarCard1.gameObject); ChangeGtoB(); });
+        }
+        if (guitarCard2.GetComponent<MoveCard>().isOnCreation == true)
+        {
+            guitarButton2.GetComponent<Button>().onClick.RemoveAllListeners();
+            guitarButton2.onClick.AddListener(delegate { CardChoosen(guitarCard2.gameObject); ChangeGtoB(); });
+        }
+        if (guitarCard3.GetComponent<MoveCard>().isOnCreation == true)
+        {
+            guitarButton3.GetComponent<Button>().onClick.RemoveAllListeners();
+            guitarButton3.onClick.AddListener(delegate { CardChoosen(guitarCard3.gameObject); ChangeGtoB(); });
+        }
+        if (bassCard.GetComponent<MoveCard>().isOnCreation == true)
+        {
+            bassButton.GetComponent<Button>().onClick.RemoveAllListeners();
+            bassButton.onClick.AddListener(delegate { CardChoosen(bassCard.gameObject); ChangeBtoD(); });
+        }
+        if (bassCard1.GetComponent<MoveCard>().isOnCreation == true)
+        {
+            bassButton1.GetComponent<Button>().onClick.RemoveAllListeners();
+            bassButton1.onClick.AddListener(delegate { CardChoosen(bassCard1.gameObject); ChangeBtoD(); });
+        }
+        if (bassCard2.GetComponent<MoveCard>().isOnCreation == true)
+        {
+            bassButton2.GetComponent<Button>().onClick.RemoveAllListeners();
+            bassButton2.onClick.AddListener(delegate { CardChoosen(bassCard2.gameObject); ChangeBtoD(); });
+        }
+        if (bassCard3.GetComponent<MoveCard>().isOnCreation == true)
+        {
+            bassButton3.GetComponent<Button>().onClick.RemoveAllListeners();
+            bassButton3.onClick.AddListener(delegate { CardChoosen(bassCard3.gameObject); ChangeBtoD(); });
+        }
+        if (drumCard.GetComponent<MoveCard>().isOnCreation == true)
+        {
+            drumButton.GetComponent<Button>().onClick.RemoveAllListeners();
+            drumButton.onClick.AddListener(delegate { CardChoosen(drumCard.gameObject); ChangeDtoSC(); });
+        }
+        if (drumCard1.GetComponent<MoveCard>().isOnCreation == true)
+        {
+            drumButton1.GetComponent<Button>().onClick.RemoveAllListeners();
+            drumButton1.onClick.AddListener(delegate { CardChoosen(drumCard1.gameObject); ChangeDtoSC(); });
+        }
+        if (drumCard2.GetComponent<MoveCard>().isOnCreation == true)
+        {
+            drumButton2.GetComponent<Button>().onClick.RemoveAllListeners();
+            drumButton2.onClick.AddListener(delegate { CardChoosen(drumCard2.gameObject); ChangeDtoSC(); });
+        }
+        if (drumCard3.GetComponent<MoveCard>().isOnCreation == true)
+        {
+            drumButton3.GetComponent<Button>().onClick.RemoveAllListeners();
+            drumButton3.onClick.AddListener(delegate { CardChoosen(drumCard3.gameObject); ChangeDtoSC(); });
+        }
     }
 
     void ChangeStat()
@@ -175,6 +272,13 @@ public class ChangeView : MonoBehaviour
         isShowingStat = !isShowingStat;
         mainWindow.SetActive(!isShowingStat);
         statWindow.SetActive(isShowingStat);
+        for(int i = 0; i < 28; i++)
+        {
+            if (gameManager.GetComponent<SongCreation>().isSaved[i])
+            {
+                songCard[i].SetActive(true);
+            }
+        }
     }
 
     void ChangeSSong()
@@ -182,5 +286,134 @@ public class ChangeView : MonoBehaviour
         isShowingSSong = !isShowingSSong;
         statWindow.SetActive(!isShowingSSong);
         songStat.SetActive(isShowingSSong);
+        
+    }
+
+    void CardChoosen(GameObject card)
+    {
+        card.GetComponent<MoveCard>().isChoosed = true;
+        cardTalent[i] = card.GetComponent<CardVariables>().talent;
+        i = i + 1;
+    }
+
+    void ChangStoG()
+    {
+        singWindow.SetActive(false);
+        singCard.gameObject.SetActive(false);
+        singCard1.gameObject.SetActive(false);
+        singCard2.gameObject.SetActive(false);
+        singCard3.gameObject.SetActive(false);
+        guitarWindow.SetActive(true);
+        if (guitarCard.GetComponent<MoveCard>().isOnCreation)
+        {
+            guitarCard.gameObject.SetActive(true);
+        }
+        if (guitarCard1.GetComponent<MoveCard>().isOnCreation)
+        {
+            guitarCard1.gameObject.SetActive(true);
+        }
+        if (guitarCard2.GetComponent<MoveCard>().isOnCreation)
+        {
+            guitarCard2.gameObject.SetActive(true);
+        }
+        if (guitarCard3.GetComponent<MoveCard>().isOnCreation)
+        {
+            guitarCard3.gameObject.SetActive(true);
+        }
+    }
+
+    void ChangeGtoB()
+    {
+        guitarWindow.SetActive(false);
+        guitarCard.gameObject.SetActive(false);
+        guitarCard1.gameObject.SetActive(false);
+        guitarCard2.gameObject.SetActive(false);
+        guitarCard3.gameObject.SetActive(false);
+        bassWindow.SetActive(true);
+        if (bassCard.GetComponent<MoveCard>().isOnCreation)
+        {
+            bassCard.gameObject.SetActive(true);
+        }
+        if (bassCard1.GetComponent<MoveCard>().isOnCreation)
+        {
+            bassCard1.gameObject.SetActive(true);
+        }
+        if (bassCard2.GetComponent<MoveCard>().isOnCreation)
+        {
+            bassCard2.gameObject.SetActive(true);
+        }
+        if (bassCard3.GetComponent<MoveCard>().isOnCreation)
+        {
+            bassCard3.gameObject.SetActive(true);
+        }
+    }
+
+    void ChangeBtoD()
+    {
+        bassWindow.SetActive(false);
+        bassCard.gameObject.SetActive(false);
+        bassCard1.gameObject.SetActive(false);
+        bassCard2.gameObject.SetActive(false);
+        bassCard3.gameObject.SetActive(false);
+        drumWindow.SetActive(true);
+        if (drumCard.GetComponent<MoveCard>().isOnCreation)
+        {
+            drumCard.gameObject.SetActive(true);
+        }
+        if (drumCard1.GetComponent<MoveCard>().isOnCreation)
+        {
+            drumCard1.gameObject.SetActive(true);
+        }
+        if (drumCard2.GetComponent<MoveCard>().isOnCreation)
+        {
+            drumCard2.gameObject.SetActive(true);
+        }
+        if (drumCard3.GetComponent<MoveCard>().isOnCreation)
+        {
+            drumCard3.gameObject.SetActive(true);
+        }
+
+
+    }
+
+    void ChangeDtoSC()
+    {
+        drumCard.gameObject.SetActive(false);
+        drumCard1.gameObject.SetActive(false);
+        drumCard2.gameObject.SetActive(false);
+        drumCard3.gameObject.SetActive(false);
+        drumWindow.SetActive(false);
+        SCWindow.SetActive(true);
+        gameManager.GetComponent<SongCreation>().enabled = true;
+    }
+
+    void ChangeDiscC()
+    {
+        isShowingDiscC = !isShowingDiscC;
+        for (int i = 0; i < 28; i++)
+        {
+            if (gameManager.GetComponent<SongCreation>().isSaved[i])
+            {
+                songCard[i].SetActive(isShowingDiscC);
+                isOnDiscCreation[i] = true;
+
+            }
+            else if (!(gameManager.GetComponent<SongCreation>().isSaved[i]))
+            {
+                songCard[i].SetActive(!isShowingDiscC);
+                isOnDiscCreation[i] = false;
+            }
+            songCard[i].gameObject.GetComponent<SongChosseTest>().changeColorToDefault();
+        }
+        gameManager.GetComponent<DiscCreation>().songsChoosed = 0;
+        gameManager.GetComponent<DiscCreation>().changeSongText();
+        creationWindow.SetActive(!isShowingDiscC);
+        songStat.SetActive(isShowingDiscC);
+        backButton.gameObject.SetActive(!isShowingDiscC);
+        backCreation.gameObject.SetActive(isShowingDiscC);
+        discQText.SetActive(isShowingDiscC);
+        createButton.gameObject.SetActive(isShowingDiscC);
+        songText.gameObject.SetActive(isShowingDiscC);
+        songNumber.gameObject.SetActive(isShowingDiscC);
     }
 }

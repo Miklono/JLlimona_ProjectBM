@@ -33,10 +33,19 @@ public class SongCreation : MonoBehaviour
     public GameObject gameManager;
     public int totalFinalPoints;
     public Button yes, no, mainMenu;
-    public int songCreated;
+    public int songCreated = 0;
     public GameObject[] cards;
     public Text[] titles;
-    
+    int points = 0;
+    int[] score = new int[3];
+    int finalScore = 0;
+    public Text[] scoreTexts;
+    public Text finalScoreText;
+    public Text[] punctiation;
+    public GameObject[] songCards;
+    public bool[] isSaved = new bool[28];
+    public int[] finalPunctuationSaved = new int[28];
+
 
     // Start is called before the first frame update
     void Start()
@@ -44,20 +53,21 @@ public class SongCreation : MonoBehaviour
         yes.onClick.AddListener(ButtonYesClicked);
         no.onClick.AddListener(ButtonNoCliced);
         mainMenu.onClick.AddListener(ButtonMainMenu);
+        creationButton.onClick.AddListener(createSong);
     }
 
     // Update is called once per frame
     void Update()
     {
-        creationButton.onClick.AddListener(createSong);
-        cardTalentSing = gameManager.GetComponent<ChooseCard>().cardTalent[0];
-        cardTalentGuitar = gameManager.GetComponent<ChooseCard>().cardTalent[1];
-        cardTalentBass = gameManager.GetComponent<ChooseCard>().cardTalent[2];
-        cardTalentDrums = gameManager.GetComponent<ChooseCard>().cardTalent[3];
+        
     }
 
     void createSong()
     {
+        cardTalentSing = gameManager.GetComponent<ChangeView>().cardTalent[0];
+        cardTalentGuitar = gameManager.GetComponent<ChangeView>().cardTalent[1];
+        cardTalentBass = gameManager.GetComponent<ChangeView>().cardTalent[2];
+        cardTalentDrums = gameManager.GetComponent<ChangeView>().cardTalent[3];
         if (!(MaxPointsSlider.totalPoints > 20))
         {
             singValue = (int)sliders[0].value + cardTalentSing;
@@ -118,7 +128,41 @@ public class SongCreation : MonoBehaviour
     {
         windows[2].SetActive(true);
         windows[1].SetActive(false);
-        gameManager.GetComponent<Puntuation>().enabled = true;
+        points = totalFinalPoints;
+        if (points >= 210)
+        {
+            score[0] = 10;
+            score[1] = 10;
+            score[2] = 10;
+        }
+        else if (points >= 175 && points < 210)
+        {
+            score[0] = (int)Random.Range(7, 9);
+            score[1] = (int)Random.Range(7, 9);
+            score[2] = (int)Random.Range(7, 9);
+        }
+        else if (points >= 100 && points < 175)
+        {
+            score[0] = (int)Random.Range(5, 7);
+            score[1] = (int)Random.Range(5, 7);
+            score[2] = (int)Random.Range(5, 7);
+        }
+        else
+        {
+            score[0] = (int)(Random.Range(0, 4));
+            score[1] = (int)(Random.Range(0, 4));
+            score[2] = (int)(Random.Range(0, 4));
+        }
+
+        scoreTexts[0].text = score[0].ToString();
+        scoreTexts[1].text = score[1].ToString();
+        scoreTexts[2].text = score[2].ToString();
+        finalScore = (int)((score[0] + score[1] + score[2]) / 3);
+        finalScoreText.text = finalScore.ToString();
+        finalPunctuationSaved[songCreated] = finalScore;
+        punctiation[songCreated].text = "score: " + finalScore.ToString();
+        isSaved[songCreated] = true;
+        songCreated++;
     }
 
     void ButtonNoCliced()
@@ -147,6 +191,9 @@ public class SongCreation : MonoBehaviour
         cards[13].GetComponent<MoveCard>().songCreated();
         cards[14].GetComponent<MoveCard>().songCreated();
         cards[15].GetComponent<MoveCard>().songCreated();
+        gameManager.GetComponent<ChangeView>().isShowingCre = false;
+        gameManager.GetComponent<ChangeView>().isShowingSC = false;
+        gameManager.GetComponent<ChangeView>().isShowingDiscC = false;
     }
 }
 

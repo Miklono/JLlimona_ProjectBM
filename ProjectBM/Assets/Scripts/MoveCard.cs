@@ -47,6 +47,7 @@ public class MoveCard : MonoBehaviour
         {
             card.SetParent(windows1, false);
             contract.SetActive(false);
+            card.gameObject.SetActive(true);
             isChoosed = false;
             isOnCreation = false;
         }
