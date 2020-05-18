@@ -868,13 +868,9 @@ PrefabInstance:
     - target: {fileID: 5660125080357048015, guid: 882e2a515323b0f478f94783ecefec5e,
         type: 3}
       propertyPath: m_Text
-      value: 'Sing: 7
+      value: 'Talent: 10
 
-        Guitar: 10
-
-        Bass: 8
-
-        Drums: 6 '
+        Price: 8.000$'
       objectReference: {fileID: 0}
     - target: {fileID: 5660125080909548366, guid: 882e2a515323b0f478f94783ecefec5e,
         type: 3}
@@ -1550,13 +1546,9 @@ PrefabInstance:
     - target: {fileID: 5660125080357048015, guid: 882e2a515323b0f478f94783ecefec5e,
         type: 3}
       propertyPath: m_Text
-      value: 'Sing: 3
+      value: 'Talent: 7
 
-        Guitar: 5
-
-        Bass: 7
-
-        Drums: 4 '
+        Price: 6.000$'
       objectReference: {fileID: 0}
     - target: {fileID: 5660125080909548366, guid: 882e2a515323b0f478f94783ecefec5e,
         type: 3}
@@ -2050,6 +2042,7 @@ MonoBehaviour:
   isContracted: 0
   isOnCreation: 0
   isChoosed: 0
+  gameManager: {fileID: 1120679557}
 --- !u!114 &152696929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2064,7 +2057,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   talent: 8
   inspiration: 5
-  cost: 0
+  cost: 6000
 --- !u!224 &152696931 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5660125081030172278, guid: 882e2a515323b0f478f94783ecefec5e,
@@ -2845,6 +2838,7 @@ MonoBehaviour:
   isContracted: 0
   isOnCreation: 0
   isChoosed: 0
+  gameManager: {fileID: 1120679557}
 --- !u!114 &255709128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2859,7 +2853,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   talent: 10
   inspiration: 8
-  cost: 0
+  cost: 8000
 --- !u!224 &255709130 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5660125081030172278, guid: 882e2a515323b0f478f94783ecefec5e,
@@ -2960,7 +2954,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &275006610
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3404,7 +3398,6 @@ GameObject:
   - component: {fileID: 311980467}
   - component: {fileID: 311980469}
   - component: {fileID: 311980468}
-  - component: {fileID: 311980470}
   m_Layer: 5
   m_Name: TimeText
   m_TagString: Untagged
@@ -3471,19 +3464,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 311980466}
   m_CullTransparentMesh: 0
---- !u!114 &311980470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 311980466}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbaa07a74021a8d4a814094d26c3a2b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeText: {fileID: 311980468}
 --- !u!1 &317106322
 GameObject:
   m_ObjectHideFlags: 0
@@ -3573,83 +3553,6 @@ MonoBehaviour:
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &321256744
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 321256745}
-  - component: {fileID: 321256748}
-  - component: {fileID: 321256747}
-  m_Layer: 5
-  m_Name: LevelText
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &321256745
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 321256744}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2131639582}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3.0999756, y: -83.69995}
-  m_SizeDelta: {x: 248.3, y: 41.7}
-  m_Pivot: {x: 1, y: 1}
---- !u!114 &321256747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 321256744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 1
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 300
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 'Fans: 0'
---- !u!222 &321256748
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 321256744}
-  m_CullTransparentMesh: 0
 --- !u!114 &322263416 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7877411964951322612, guid: 19ec2b722c6feff44b9cce0c4e3e0cb1,
@@ -4608,13 +4511,9 @@ PrefabInstance:
     - target: {fileID: 5660125080357048015, guid: 882e2a515323b0f478f94783ecefec5e,
         type: 3}
       propertyPath: m_Text
-      value: 'Sing: 5
+      value: 'Talent: 10
 
-        Guitar: 7
-
-        Bass: 6
-
-        Drums: 10 '
+        Price: 8.000$'
       objectReference: {fileID: 0}
     - target: {fileID: 5660125080909548366, guid: 882e2a515323b0f478f94783ecefec5e,
         type: 3}
@@ -6001,7 +5900,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   talent: 5
   inspiration: 4
-  cost: 0
+  cost: 4000
 --- !u!114 &515145914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6022,6 +5921,7 @@ MonoBehaviour:
   isContracted: 0
   isOnCreation: 0
   isChoosed: 0
+  gameManager: {fileID: 1120679557}
 --- !u!114 &518706236 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7877411964951322612, guid: 19ec2b722c6feff44b9cce0c4e3e0cb1,
@@ -6491,6 +6391,8 @@ RectTransform:
   - {fileID: 1809812360}
   - {fileID: 2109263554}
   - {fileID: 2138012543}
+  - {fileID: 1895945742}
+  - {fileID: 955807110}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6680,7 +6582,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &583759126
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7232,6 +7134,7 @@ MonoBehaviour:
   isContracted: 0
   isOnCreation: 0
   isChoosed: 0
+  gameManager: {fileID: 1120679557}
 --- !u!114 &617148695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7246,7 +7149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   talent: 5
   inspiration: 4
-  cost: 0
+  cost: 4000
 --- !u!224 &617148697 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5660125081030172278, guid: 882e2a515323b0f478f94783ecefec5e,
@@ -7796,13 +7699,9 @@ PrefabInstance:
     - target: {fileID: 5660125080357048015, guid: 882e2a515323b0f478f94783ecefec5e,
         type: 3}
       propertyPath: m_Text
-      value: 'Sing: 6
+      value: 'Talent: 10
 
-        Guitar: 8
-
-        Bass: 10
-
-        Drums: 5'
+        Price: 8.000$'
       objectReference: {fileID: 0}
     - target: {fileID: 5660125080909548366, guid: 882e2a515323b0f478f94783ecefec5e,
         type: 3}
@@ -8207,6 +8106,7 @@ MonoBehaviour:
   isContracted: 0
   isOnCreation: 0
   isChoosed: 0
+  gameManager: {fileID: 1120679557}
 --- !u!114 &714695948 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5660125080331468083, guid: 882e2a515323b0f478f94783ecefec5e,
@@ -8842,13 +8742,7 @@ PrefabInstance:
     - target: {fileID: 5660125080357048015, guid: 882e2a515323b0f478f94783ecefec5e,
         type: 3}
       propertyPath: m_Text
-      value: 'Sing: 2
-
-        Guitar: 6
-
-        Bass: 4
-
-        Drums: 1 '
+      value: "Talent: 6\t\nPrice: 4.000$"
       objectReference: {fileID: 0}
     - target: {fileID: 5660125080909548366, guid: 882e2a515323b0f478f94783ecefec5e,
         type: 3}
@@ -9100,6 +8994,7 @@ MonoBehaviour:
   isContracted: 0
   isOnCreation: 0
   isChoosed: 0
+  gameManager: {fileID: 1120679557}
 --- !u!114 &808880682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9114,7 +9009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   talent: 10
   inspiration: 8
-  cost: 0
+  cost: 8000
 --- !u!224 &808880684 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5660125081030172278, guid: 882e2a515323b0f478f94783ecefec5e,
@@ -9157,7 +9052,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -179.1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &813616105
@@ -9725,7 +9620,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   talent: 7
   inspiration: 6
-  cost: 0
+  cost: 6000
 --- !u!114 &856538203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9746,6 +9641,7 @@ MonoBehaviour:
   isContracted: 0
   isOnCreation: 0
   isChoosed: 0
+  gameManager: {fileID: 1120679557}
 --- !u!1 &856952424 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5660125081030172273, guid: 882e2a515323b0f478f94783ecefec5e,
@@ -9772,6 +9668,7 @@ MonoBehaviour:
   isContracted: 0
   isOnCreation: 0
   isChoosed: 0
+  gameManager: {fileID: 1120679557}
 --- !u!114 &856952426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9786,7 +9683,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   talent: 6
   inspiration: 3
-  cost: 0
+  cost: 4000
 --- !u!224 &856952428 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5660125081030172278, guid: 882e2a515323b0f478f94783ecefec5e,
@@ -9955,6 +9852,7 @@ RectTransform:
   - {fileID: 1911217655}
   - {fileID: 295448531}
   - {fileID: 900208350}
+  - {fileID: 1096460445}
   m_Father: {fileID: 638166488}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10049,6 +9947,7 @@ MonoBehaviour:
   isContracted: 0
   isOnCreation: 0
   isChoosed: 0
+  gameManager: {fileID: 1120679557}
 --- !u!114 &871246803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10144,11 +10043,11 @@ RectTransform:
   m_Father: {fileID: 861779666}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -122, y: -210.17}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -121.999985, y: 53.978516}
   m_SizeDelta: {x: 128.2, y: 65.703}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &900208351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10699,13 +10598,9 @@ PrefabInstance:
     - target: {fileID: 5660125080357048015, guid: 882e2a515323b0f478f94783ecefec5e,
         type: 3}
       propertyPath: m_Text
-      value: 'Sing: 3
+      value: 'Talent: 8
 
-        Guitar: 5
-
-        Bass: 2
-
-        Drums: 8 '
+        Price: 6.000$'
       objectReference: {fileID: 0}
     - target: {fileID: 5660125080909548366, guid: 882e2a515323b0f478f94783ecefec5e,
         type: 3}
@@ -10968,6 +10863,83 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 951027703}
+  m_CullTransparentMesh: 0
+--- !u!1 &955807109
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 955807110}
+  - component: {fileID: 955807112}
+  - component: {fileID: 955807111}
+  m_Layer: 5
+  m_Name: Cost Number
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &955807110
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955807109}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 572638110}
+  m_RootOrder: 35
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -23.48, y: -18.425}
+  m_SizeDelta: {x: 52.89, y: 22.85}
+  m_Pivot: {x: 1, y: 0.5}
+--- !u!114 &955807111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955807109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 2
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 0
+--- !u!222 &955807112
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955807109}
   m_CullTransparentMesh: 0
 --- !u!1 &974152007 stripped
 GameObject:
@@ -12182,6 +12154,7 @@ MonoBehaviour:
   isContracted: 0
   isOnCreation: 0
   isChoosed: 0
+  gameManager: {fileID: 1120679557}
 --- !u!114 &1088949784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12196,7 +12169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   talent: 10
   inspiration: 8
-  cost: 0
+  cost: 8000
 --- !u!224 &1088949786 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5660125081030172278, guid: 882e2a515323b0f478f94783ecefec5e,
@@ -12223,13 +12196,9 @@ PrefabInstance:
     - target: {fileID: 5660125080357048015, guid: 882e2a515323b0f478f94783ecefec5e,
         type: 3}
       propertyPath: m_Text
-      value: 'Sing: 2
+      value: 'Talent: 3
 
-        Guitar: 1
-
-        Bass: 3
-
-        Drums: 2'
+        Price: 0$'
       objectReference: {fileID: 0}
     - target: {fileID: 5660125080909548366, guid: 882e2a515323b0f478f94783ecefec5e,
         type: 3}
@@ -12373,6 +12342,120 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 882e2a515323b0f478f94783ecefec5e, type: 3}
+--- !u!1 &1096460444
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1096460445}
+  - component: {fileID: 1096460448}
+  - component: {fileID: 1096460447}
+  - component: {fileID: 1096460446}
+  m_Layer: 5
+  m_Name: Single
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1096460445
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096460444}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1383609669}
+  m_Father: {fileID: 861779666}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 431.76996, y: 54.005127}
+  m_SizeDelta: {x: 205.8, y: 65.7}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &1096460446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096460444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1096460447}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1096460447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096460444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &1096460448
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096460444}
+  m_CullTransparentMesh: 0
 --- !u!1 &1110946889 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7877411964756800790, guid: 19ec2b722c6feff44b9cce0c4e3e0cb1,
@@ -12439,6 +12522,7 @@ GameObject:
   - component: {fileID: 1120679562}
   - component: {fileID: 1120679564}
   - component: {fileID: 1120679561}
+  - component: {fileID: 1120679563}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -12609,6 +12693,8 @@ MonoBehaviour:
   discQText: {fileID: 275006609}
   songNumber: {fileID: 2138012544}
   songText: {fileID: 2109263555}
+  costText: {fileID: 1895945743}
+  costNumber: {fileID: 955807111}
   createButton: {fileID: 1809812361}
 --- !u!114 &1120679561
 MonoBehaviour:
@@ -12658,6 +12744,8 @@ MonoBehaviour:
   isChoosed: 00000000000000000000000000000000000000000000000000000000
   songNumber: {fileID: 2138012544}
   songText: {fileID: 2109263555}
+  costNumber: {fileID: 955807111}
+  costText: {fileID: 1895945743}
   createButton: {fileID: 1809812361}
   punctuationWindow: {fileID: 420140565}
   discCWindow: {fileID: 572638109}
@@ -12688,6 +12776,22 @@ MonoBehaviour:
   - {fileID: 716983737}
   pointsText: {fileID: 1402237551}
   deafult: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+--- !u!114 &1120679563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120679557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbaa07a74021a8d4a814094d26c3a2b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeText: {fileID: 311980468}
+  moneyText: {fileID: 1162602573}
+  money: 5000
+  moneyGained: 0
 --- !u!114 &1120679564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12727,7 +12831,8 @@ MonoBehaviour:
   yes: {fileID: 295448532}
   no: {fileID: 900208351}
   mainMenu: {fileID: 1544395806}
-  songCreated: 0
+  single: {fileID: 1096460446}
+  songCreated: 10
   cards:
   - {fileID: 711607993}
   - {fileID: 515145911}
@@ -13116,13 +13221,9 @@ PrefabInstance:
     - target: {fileID: 5660125080357048015, guid: 882e2a515323b0f478f94783ecefec5e,
         type: 3}
       propertyPath: m_Text
-      value: 'Sing: 3
+      value: 'Talent: 3
 
-        Guitar: 2
-
-        Bass: 1
-
-        Drums: 1 '
+        Price: 0$'
       objectReference: {fileID: 0}
     - target: {fileID: 5660125080909548360, guid: 882e2a515323b0f478f94783ecefec5e,
         type: 3}
@@ -13317,6 +13418,7 @@ MonoBehaviour:
   isContracted: 0
   isOnCreation: 0
   isChoosed: 0
+  gameManager: {fileID: 1120679557}
 --- !u!114 &1150561572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13331,7 +13433,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   talent: 5
   inspiration: 3
-  cost: 0
+  cost: 4000
 --- !u!224 &1150561574 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5660125081030172278, guid: 882e2a515323b0f478f94783ecefec5e,
@@ -13501,7 +13603,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Money: 0$'
+  m_Text: 'Money: 5000$'
 --- !u!222 &1162602574
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14493,6 +14595,7 @@ MonoBehaviour:
   isContracted: 0
   isOnCreation: 0
   isChoosed: 0
+  gameManager: {fileID: 1120679557}
 --- !u!114 &1290213986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14507,7 +14610,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   talent: 7
   inspiration: 6
-  cost: 0
+  cost: 6000
 --- !u!224 &1290213988 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5660125081030172278, guid: 882e2a515323b0f478f94783ecefec5e,
@@ -14773,13 +14876,9 @@ PrefabInstance:
     - target: {fileID: 5660125080357048015, guid: 882e2a515323b0f478f94783ecefec5e,
         type: 3}
       propertyPath: m_Text
-      value: 'Sing: 5
+      value: 'Talent: 5
 
-        Guitar: 2
-
-        Bass: 2
-
-        Drums: 4'
+        Price: 4.000$'
       objectReference: {fileID: 0}
     - target: {fileID: 5660125080909548366, guid: 882e2a515323b0f478f94783ecefec5e,
         type: 3}
@@ -15314,6 +15413,7 @@ MonoBehaviour:
   isContracted: 0
   isOnCreation: 0
   isChoosed: 0
+  gameManager: {fileID: 1120679557}
 --- !u!114 &1349464447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15822,6 +15922,83 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19ec2b722c6feff44b9cce0c4e3e0cb1, type: 3}
+--- !u!1 &1383609668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1383609669}
+  - component: {fileID: 1383609671}
+  - component: {fileID: 1383609670}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1383609669
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383609668}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1096460445}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1383609670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383609668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 1
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Make single
+--- !u!222 &1383609671
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383609668}
+  m_CullTransparentMesh: 0
 --- !u!1 &1402237549
 GameObject:
   m_ObjectHideFlags: 0
@@ -16654,6 +16831,7 @@ MonoBehaviour:
   isContracted: 0
   isOnCreation: 0
   isChoosed: 0
+  gameManager: {fileID: 1120679557}
 --- !u!114 &1503283717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16668,7 +16846,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   talent: 8
   inspiration: 5
-  cost: 0
+  cost: 6000
 --- !u!224 &1503283719 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5660125081030172278, guid: 882e2a515323b0f478f94783ecefec5e,
@@ -17281,13 +17459,9 @@ PrefabInstance:
     - target: {fileID: 5660125080357048015, guid: 882e2a515323b0f478f94783ecefec5e,
         type: 3}
       propertyPath: m_Text
-      value: 'Sing: 1
+      value: 'Talent: 5
 
-        Guitar: 3
-
-        Bass: 5
-
-        Drums: 2 '
+        Price: 4.000$'
       objectReference: {fileID: 0}
     - target: {fileID: 5660125080909548366, guid: 882e2a515323b0f478f94783ecefec5e,
         type: 3}
@@ -17489,7 +17663,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1569762574
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17955,7 +18129,9 @@ PrefabInstance:
     - target: {fileID: 5660125080357048015, guid: 882e2a515323b0f478f94783ecefec5e,
         type: 3}
       propertyPath: m_Text
-      value: "Sing: 2\nGuitar: 4 \nBass: 3\nDrums: 5 "
+      value: 'Talent: 5
+
+        Price: 4.000$'
       objectReference: {fileID: 0}
     - target: {fileID: 5660125080909548366, guid: 882e2a515323b0f478f94783ecefec5e,
         type: 3}
@@ -19607,7 +19783,9 @@ PrefabInstance:
     - target: {fileID: 5660125080357048015, guid: 882e2a515323b0f478f94783ecefec5e,
         type: 3}
       propertyPath: m_Text
-      value: "Sing: 3\nGuitar: 7 \nBass: 2\nDrums: 4"
+      value: 'Talent: 8
+
+        Price: 6.000$'
       objectReference: {fileID: 0}
     - target: {fileID: 5660125080909548360, guid: 882e2a515323b0f478f94783ecefec5e,
         type: 3}
@@ -20820,7 +20998,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1809812360
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21265,6 +21443,83 @@ MonoBehaviour:
   colorChanged: 0
   card: {fileID: 1984027558}
   defaultColor: {r: 1, g: 1, b: 1, a: 0.39215687}
+--- !u!1 &1895945741
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1895945742}
+  - component: {fileID: 1895945744}
+  - component: {fileID: 1895945743}
+  m_Layer: 5
+  m_Name: 'Cost Text '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1895945742
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895945741}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 572638110}
+  m_RootOrder: 34
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -76.37, y: -18.425}
+  m_SizeDelta: {x: 35.7, y: 22.85}
+  m_Pivot: {x: 1, y: 0.5}
+--- !u!114 &1895945743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895945741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Cost:'
+--- !u!222 &1895945744
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895945741}
+  m_CullTransparentMesh: 0
 --- !u!1 &1897390991
 GameObject:
   m_ObjectHideFlags: 0
@@ -21837,6 +22092,7 @@ MonoBehaviour:
   isContracted: 0
   isOnCreation: 0
   isChoosed: 0
+  gameManager: {fileID: 1120679557}
 --- !u!114 &1928449402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22591,13 +22847,9 @@ PrefabInstance:
     - target: {fileID: 5660125080357048015, guid: 882e2a515323b0f478f94783ecefec5e,
         type: 3}
       propertyPath: m_Text
-      value: 'Sing: 1
+      value: 'Talent: 3
 
-        Guitar: 2
-
-        Bass: 2
-
-        Drums: 3 '
+        Price: 0$'
       objectReference: {fileID: 0}
     - target: {fileID: 5660125080909548366, guid: 882e2a515323b0f478f94783ecefec5e,
         type: 3}
@@ -24064,7 +24316,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2109263554
 RectTransform:
   m_ObjectHideFlags: 0
@@ -24149,13 +24401,9 @@ PrefabInstance:
     - target: {fileID: 5660125080357048015, guid: 882e2a515323b0f478f94783ecefec5e,
         type: 3}
       propertyPath: m_Text
-      value: 'Sing: 1
+      value: 'Talent: 4
 
-        Guitar: 4
-
-        Bass: 2
-
-        Drums: 1 '
+        Price: 0$'
       objectReference: {fileID: 0}
     - target: {fileID: 5660125080909548366, guid: 882e2a515323b0f478f94783ecefec5e,
         type: 3}
@@ -24324,13 +24572,9 @@ PrefabInstance:
     - target: {fileID: 5660125080357048015, guid: 882e2a515323b0f478f94783ecefec5e,
         type: 3}
       propertyPath: m_Text
-      value: 'Sing: 10
+      value: 'Talent: 10
 
-        Guitar: 7
-
-        Bass: 5
-
-        Drums: 5 '
+        Price: 8.000$'
       objectReference: {fileID: 0}
     - target: {fileID: 5660125080909548366, guid: 882e2a515323b0f478f94783ecefec5e,
         type: 3}
@@ -24518,6 +24762,7 @@ MonoBehaviour:
   isContracted: 0
   isOnCreation: 0
   isChoosed: 0
+  gameManager: {fileID: 1120679557}
 --- !u!114 &2117215052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24532,7 +24777,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   talent: 10
   inspiration: 8
-  cost: 0
+  cost: 8000
 --- !u!114 &2118742509 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7877411964951322612, guid: 19ec2b722c6feff44b9cce0c4e3e0cb1,
@@ -24650,7 +24895,6 @@ RectTransform:
   - {fileID: 482899924}
   - {fileID: 311980467}
   - {fileID: 1162602571}
-  - {fileID: 321256745}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -24676,7 +24920,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2138012543
 RectTransform:
   m_ObjectHideFlags: 0
@@ -24691,11 +24935,11 @@ RectTransform:
   m_Father: {fileID: 572638110}
   m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 331.92, y: 3.15}
-  m_SizeDelta: {x: 29.03, y: 22}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -23.47998, y: 3.15}
+  m_SizeDelta: {x: 42.12, y: 22}
+  m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &2138012544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24779,7 +25023,9 @@ PrefabInstance:
     - target: {fileID: 5660125080357048015, guid: 882e2a515323b0f478f94783ecefec5e,
         type: 3}
       propertyPath: m_Text
-      value: "Sing: 7\nGuitar: 3\nBass: 5 \nDrums: 2"
+      value: 'Talent: 7
+
+        Price: 6.000$'
       objectReference: {fileID: 0}
     - target: {fileID: 5660125080909548366, guid: 882e2a515323b0f478f94783ecefec5e,
         type: 3}

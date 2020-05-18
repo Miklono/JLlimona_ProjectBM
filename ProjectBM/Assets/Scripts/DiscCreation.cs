@@ -13,7 +13,7 @@ public class DiscCreation : MonoBehaviour
     public GameObject gameManager;
     public Button discCreation;
     public bool[] isChoosed = new bool[28];
-    public Text songNumber, songText;
+    public Text songNumber, songText, costNumber, costText;
     public Button createButton;
     public GameObject punctuationWindow, discCWindow;
     public Text[] scoreText;
@@ -21,6 +21,8 @@ public class DiscCreation : MonoBehaviour
     int finalScore;
     int[] scores = new int[3];
     public GameObject headerText, backCreation, backButton;
+    int cost;
+    int money;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +34,7 @@ public class DiscCreation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        money = gameManager.GetComponent<Time>().money;
     }
 
     void CreateDisc()
@@ -107,6 +109,8 @@ public class DiscCreation : MonoBehaviour
             cardScore[songsChoosed] = gameManager.GetComponent<SongCreation>().finalPunctuationSaved[i];
             isChoosed[i] = true;
             songsChoosed++;
+            cost = songsChoosed * 100;
+            changeCostText();
             changeSongText();
         }
         else if (isChoosed[i])
@@ -124,7 +128,7 @@ public class DiscCreation : MonoBehaviour
     }
     void produceDisc()
     {
-        if(songsChoosed >= 7)
+        if(songsChoosed >= 7 && money >= cost)
         {
             for (int i = 0; i < songsChoosed; i++)
             {
@@ -153,8 +157,39 @@ public class DiscCreation : MonoBehaviour
             backCreation.SetActive(false);
             songText.gameObject.SetActive(false);
             songNumber.gameObject.SetActive(false);
+            costText.gameObject.SetActive(false);
+            costNumber.gameObject.SetActive(false);
             backButton.SetActive(true);
+            gameManager.GetComponent<Time>().moneyGained = -cost;
+            gameManager.GetComponent<Time>().setMoneyText();
+            if (finalScore < 5)
+            {
+                gameManager.GetComponent<Time>().moneyGained = 1000;
+            }
+            else if (finalScore >= 5 || finalScore < 7)
+            {
+                gameManager.GetComponent<Time>().moneyGained = 5000;
+            }
+            else if (finalScore >= 7 || finalScore < 8)
+            {
+                gameManager.GetComponent<Time>().moneyGained = 8000;
+            }
+            else if (finalScore >= 8 || finalScore <= 9)
+            {
+                gameManager.GetComponent<Time>().moneyGained = 10000;
+            }
+            else if (finalScore == 10)
+            {
+                gameManager.GetComponent<Time>().moneyGained = 20000;
+            }
+
+            gameManager.GetComponent<Time>().setMoneyText();
         }
+    }
+
+    void changeCostText()
+    {
+        costNumber.text = cost.ToString() + "$";
     }
 
 }

@@ -7,17 +7,18 @@ public class Time : MonoBehaviour
 {
 
     //Variables
-    public Text timeText;
+    public Text timeText, moneyText;
     int counter;
     int day = 1;
     int week = 1;
     int month = 1;
     int year = 1;
+    public int money = 5000;
+    public int moneyGained = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        timeText = GetComponent<Text>();
         InvokeRepeating("TimePas", 1f, 1f);
     }
 
@@ -44,6 +45,7 @@ public class Time : MonoBehaviour
         {
             week = 1;
             month++;
+            moneyGained = -800;
         }
         if (month >= 13)
         {
@@ -52,5 +54,13 @@ public class Time : MonoBehaviour
         }
 
         SetTimeText();
+        setMoneyText();
+    }
+
+    public void setMoneyText()
+    {
+        money = money + moneyGained;
+        moneyText.text = "Money: " + money.ToString() + "$";
+        moneyGained = 0;
     }
 }

@@ -22,7 +22,7 @@ public class ChangeView : MonoBehaviour
     public Button backButton, backCreation;
     public bool[] isOnDiscCreation = new bool[28];
     public GameObject discQText;
-    public Text songNumber, songText;
+    public Text songNumber, songText, costText, costNumber;
     public Button createButton;
 
     // Start is called before the first frame update
@@ -415,5 +415,7 @@ public class ChangeView : MonoBehaviour
         createButton.gameObject.SetActive(isShowingDiscC);
         songText.gameObject.SetActive(isShowingDiscC);
         songNumber.gameObject.SetActive(isShowingDiscC);
+        costText.gameObject.SetActive(isShowingDiscC);
+        costNumber.gameObject.SetActive(isShowingDiscC);
     }
 }

@@ -32,7 +32,7 @@ public class SongCreation : MonoBehaviour
     int cardTalentSing, cardTalentGuitar, cardTalentBass, cardTalentDrums;
     public GameObject gameManager;
     public int totalFinalPoints;
-    public Button yes, no, mainMenu;
+    public Button yes, no, mainMenu, single;
     public int songCreated = 0;
     public GameObject[] cards;
     public Text[] titles;
@@ -52,6 +52,7 @@ public class SongCreation : MonoBehaviour
     {
         yes.onClick.AddListener(ButtonYesClicked);
         no.onClick.AddListener(ButtonNoCliced);
+        single.onClick.AddListener(ButtonSinglePres);
         mainMenu.onClick.AddListener(ButtonMainMenu);
         creationButton.onClick.AddListener(createSong);
     }
@@ -163,6 +164,71 @@ public class SongCreation : MonoBehaviour
         punctiation[songCreated].text = "score: " + finalScore.ToString();
         isSaved[songCreated] = true;
         songCreated++;
+    }
+
+    void ButtonSinglePres()
+    {
+        windows[2].SetActive(true);
+        windows[1].SetActive(false);
+        points = totalFinalPoints;
+        if (points >= 210)
+        {
+            score[0] = 10;
+            score[1] = 10;
+            score[2] = 10;
+        }
+        else if (points >= 175 && points < 210)
+        {
+            score[0] = (int)Random.Range(7, 9);
+            score[1] = (int)Random.Range(7, 9);
+            score[2] = (int)Random.Range(7, 9);
+        }
+        else if (points >= 100 && points < 175)
+        {
+            score[0] = (int)Random.Range(5, 7);
+            score[1] = (int)Random.Range(5, 7);
+            score[2] = (int)Random.Range(5, 7);
+        }
+        else
+        {
+            score[0] = (int)(Random.Range(0, 4));
+            score[1] = (int)(Random.Range(0, 4));
+            score[2] = (int)(Random.Range(0, 4));
+        }
+
+        scoreTexts[0].text = score[0].ToString();
+        scoreTexts[1].text = score[1].ToString();
+        scoreTexts[2].text = score[2].ToString();
+        finalScore = (int)((score[0] + score[1] + score[2]) / 3);
+        finalScoreText.text = finalScore.ToString();
+        finalPunctuationSaved[songCreated] = finalScore;
+        punctiation[songCreated].text = "score: " + finalScore.ToString();
+        isSaved[songCreated] = true;
+        songCreated++;
+
+        if(finalScore < 5)
+        {
+            gameManager.GetComponent<Time>().moneyGained = 100;
+        }
+        else if (finalScore  >=5 || finalScore < 7)
+        {
+            gameManager.GetComponent<Time>().moneyGained = 500;
+        }
+        else if (finalScore >= 7 || finalScore < 8)
+        {
+            gameManager.GetComponent<Time>().moneyGained = 800;
+        }
+        else if (finalScore >= 8 || finalScore <= 9)
+        {
+            gameManager.GetComponent<Time>().moneyGained = 1000;
+        }
+        else if (finalScore == 10)
+        {
+            gameManager.GetComponent<Time>().moneyGained = 2000;
+        }
+
+        gameManager.GetComponent<Time>().setMoneyText();
+
     }
 
     void ButtonNoCliced()

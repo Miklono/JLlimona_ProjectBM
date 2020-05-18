@@ -15,6 +15,9 @@ public class MoveCard : MonoBehaviour
     public bool isContracted = false;
     public bool isOnCreation = false;
     public bool isChoosed = false;
+    public GameObject gameManager;
+    int cost;
+    int money;
     //public static bool isContractedExternal;
 
     // Start is called before the first frame update
@@ -22,22 +25,25 @@ public class MoveCard : MonoBehaviour
     {
         Button btn = contract.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
+        cost = card.gameObject.GetComponent<CardVariables>().cost;
         
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        money = gameManager.GetComponent<Time>().money;
     }
 
     void TaskOnClick()
     {
-        if (!isOnCreation)
+        if (!isOnCreation && money >= cost)
         {
             isContracted = true;
             card.SetParent(windows1, false);
             contract.SetActive(false);
+            gameManager.GetComponent<Time>().moneyGained = -cost;
+            gameManager.GetComponent<Time>().setMoneyText();
         }
     }
 
