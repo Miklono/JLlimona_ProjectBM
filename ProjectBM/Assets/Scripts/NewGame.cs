@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class NewGame : MonoBehaviour
 {
+    //Un altre script que no serveix per res pero el mantenc per el record.
+    //Estava pensat per ser un menu principal on podries triar si fer una nova partida, continuar...ç
 
     //Variables
     public Button newGame;

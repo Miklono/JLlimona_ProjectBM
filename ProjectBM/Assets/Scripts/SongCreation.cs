@@ -50,6 +50,7 @@ public class SongCreation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Crida la funcio que pertoca quan es presiona el buto
         yes.onClick.AddListener(ButtonYesClicked);
         no.onClick.AddListener(ButtonNoCliced);
         single.onClick.AddListener(ButtonSinglePres);
@@ -63,24 +64,27 @@ public class SongCreation : MonoBehaviour
         
     }
 
+    //Funcio per crear la canço
     void createSong()
     {
+        //Guarda les variables "talent" que es guarden al selaccionar la carta
         cardTalentSing = gameManager.GetComponent<ChangeView>().cardTalent[0];
         cardTalentGuitar = gameManager.GetComponent<ChangeView>().cardTalent[1];
         cardTalentBass = gameManager.GetComponent<ChangeView>().cardTalent[2];
         cardTalentDrums = gameManager.GetComponent<ChangeView>().cardTalent[3];
-        if (!(MaxPointsSlider.totalPoints > 20))
+        if (!(MaxPointsSlider.totalPoints > 20)) //Nomes es pot crear la canço cunat els punt seleccionats no superen 20
         {
-            singValue = (int)sliders[0].value + cardTalentSing;
+            //Es guarda els valors de cada un, que es la suma del punts selaccionat mes el talent de la carta triada
+            singValue = (int)sliders[0].value + cardTalentSing; 
             guitarValue = (int)sliders[1].value + cardTalentGuitar;
             bassValue = (int)sliders[2].value + cardTalentBass;
             drumValue = (int)sliders[3].value + cardTalentDrums;
             genere = choises[0].value;
             theme = choises[1].value;
-            songName = songInput.text;
-            titles[songCreated].text = songName;
-           
+            songName = songInput.text; 
+            titles[songCreated].text = songName; //Guarda el titol de la canço
 
+            //Depenet de la combinació es multipliquen els valors més importants
             if (genere == 0 && theme == 2)
             {
                 totalValue = (singValue * 3) + guitarValue + bassValue + (drumValue * 2);
@@ -110,7 +114,8 @@ public class SongCreation : MonoBehaviour
                 totalValue = singValue + guitarValue + bassValue + drumValue;
             }
 
-            qualityPoints = (int)Random.Range(totalValue - 5, totalValue);
+            //Genera aleatoriament el punts de qualitat i de originalitat. Aquest serveixen per decidir la puntuació
+            qualityPoints = (int)Random.Range(totalValue - 5, totalValue); 
             originalityPoints = (int)Random.Range(totalValue - 5, totalValue);
             totalFinalPoints = qualityPoints + originalityPoints;
             qualityNumber.text = qualityPoints.ToString();
@@ -125,11 +130,13 @@ public class SongCreation : MonoBehaviour
         
     }
 
+    //S'activa quan el jugador decideix quedar-se amb els punts anteriors
     void ButtonYesClicked()
     {
         windows[2].SetActive(true);
         windows[1].SetActive(false);
         points = totalFinalPoints;
+        //Depenets de la suma dels punts obtinguts anteriorment (qualitat i originalitat) genera una puntuació
         if (points >= 210)
         {
             score[0] = 10;
@@ -154,18 +161,20 @@ public class SongCreation : MonoBehaviour
             score[1] = (int)(Random.Range(0, 4));
             score[2] = (int)(Random.Range(0, 4));
         }
-
+        
+        //Mostar la puntuació al jugador
         scoreTexts[0].text = score[0].ToString();
         scoreTexts[1].text = score[1].ToString();
         scoreTexts[2].text = score[2].ToString();
         finalScore = (int)((score[0] + score[1] + score[2]) / 3);
         finalScoreText.text = finalScore.ToString();
-        finalPunctuationSaved[songCreated] = finalScore;
-        punctiation[songCreated].text = "score: " + finalScore.ToString();
-        isSaved[songCreated] = true;
+        finalPunctuationSaved[songCreated] = finalScore; //Guarda la puntuació final per poder crear un disc mes tard
+        punctiation[songCreated].text = "score: " + finalScore.ToString(); //Guarda la puntuació en format text
+        isSaved[songCreated] = true; //Diu que la canço ha estat guardad
         songCreated++;
     }
 
+    //Fa el mateix que ButtonYesClicked pero aquest genera diners per al jugador
     void ButtonSinglePres()
     {
         windows[2].SetActive(true);
@@ -206,6 +215,7 @@ public class SongCreation : MonoBehaviour
         isSaved[songCreated] = true;
         songCreated++;
 
+        //Depenet de la puntuació genera mes o menys diners
         if(finalScore < 5)
         {
             gameManager.GetComponent<Time>().moneyGained = 100;
@@ -231,12 +241,14 @@ public class SongCreation : MonoBehaviour
 
     }
 
+    //Si el jugador tria que no, pot tornar enrera y cambiar les puntuacions, combinacions o el titol
     void ButtonNoCliced()
     {
         windows[0].SetActive(true);
         windows[1].SetActive(false);
     }
 
+    //Torna tot a l'estat inicial i cambia a la finestra del menu principal
     void ButtonMainMenu()
     {
         windows[2].SetActive(false);

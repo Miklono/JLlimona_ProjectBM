@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameStart : MonoBehaviour
 {
+    //Aquest escript no serveix per res pero el deixo com a record
 
     //Variables
     public GameObject startMenu, mainWindow, managementWindow, contractWindow, dropdownMenu, creationMenu;
@@ -16,7 +17,6 @@ public class GameStart : MonoBehaviour
         managementWindow.SetActive(false);
         contractWindow.SetActive(false);
         dropdownMenu.SetActive(false);
-        creationMenu.SetActive(false);
     }
 
     // Update is called once per frame

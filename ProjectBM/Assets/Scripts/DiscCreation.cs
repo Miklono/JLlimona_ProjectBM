@@ -34,15 +34,16 @@ public class DiscCreation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        money = gameManager.GetComponent<Time>().money;
+        money = gameManager.GetComponent<Time>().money; //Guarda els diners actuals
     }
 
+    //Funcio per fer la creacio del disc
     void CreateDisc()
     {
         
         for (int i = 0; i < 28; i++)
         {
-            songCards[i].gameObject.GetComponent<SongChosseTest>().enabled = true;
+            songCards[i].gameObject.GetComponent<SongChosseTest>().enabled = true; //Activa l'script que permet canvia el color quan es seleciona una canço
         }
         songCards[0].onClick.RemoveAllListeners();
         songCards[0].onClick.AddListener(delegate { songChoosed(songCards[0].gameObject, 0); });
@@ -106,45 +107,51 @@ public class DiscCreation : MonoBehaviour
     {
         if (!isChoosed[i])
         {
-            cardScore[songsChoosed] = gameManager.GetComponent<SongCreation>().finalPunctuationSaved[i];
-            isChoosed[i] = true;
-            songsChoosed++;
-            cost = songsChoosed * 100;
+            cardScore[songsChoosed] = gameManager.GetComponent<SongCreation>().finalPunctuationSaved[i]; //Agafa la puntuacio de quan es va crea la canço
+            isChoosed[i] = true; //Diu que ha estat triada
+            songsChoosed++; //Augmenta el contador de cançons triades
+            cost = songsChoosed * 100; //Defineix el cost de la creacio del disc
             changeCostText();
             changeSongText();
         }
         else if (isChoosed[i])
         {
-            songsChoosed--;
-            cardScore[songsChoosed] = 0;
-            isChoosed[i] = false;
+            songsChoosed--; //Reduiex en un el nombre de cançons escullides
+            cardScore[songsChoosed] = 0; //Cambia el valor de la puntuacio a 0
+            isChoosed[i] = false; //Diu que la canço es no ha estat escullida
             changeSongText();
         }
     }
 
+    //Mostra el nombre de cançons que ha escullit
     public void changeSongText()
     {
         songNumber.text = songsChoosed.ToString();
     }
+
     void produceDisc()
     {
-        if(songsChoosed >= 7 && money >= cost)
+        if(songsChoosed >= 7 && money >= cost) //Nomes deixa activa la funcio si ha escullit 7 o mes cançons i si te els diners requerits
         {
             for (int i = 0; i < songsChoosed; i++)
             {
-                finalScore = finalScore + cardScore[i];
+                finalScore = finalScore + cardScore[i]; //Suma totes les puntuacions de les cançons escollides
             }
-            finalScore = (int)finalScore / songsChoosed;
+            finalScore = (int)finalScore / songsChoosed; //Fa la mitja de les puntuacions sumades
+            //Les tres puntuacions es un numero aleatori de la mitja de les puntuacions i un mes, perque sembli que hi ha varitat d'opinio sense perjudicar molt
             scores[0] = (int)Random.Range(finalScore, finalScore + 1);
             scores[1] = (int)Random.Range(finalScore, finalScore + 1);
             scores[2] = (int)Random.Range(finalScore, finalScore + 1);
-            finalScore = (scores[0] + scores[1] + scores[2]) / 3;
+            finalScore = (scores[0] + scores[1] + scores[2]) / 3; // La puntuacio final es La mitja de les tres puntuacions generades aleatoriament
+            //Mostra el rsultat al jugador
             scoreText[0].text = scores[0].ToString();
             scoreText[1].text = scores[1].ToString();
             scoreText[2].text = scores[2].ToString();
             finalScoreText.text = finalScore.ToString();
+            //Cambia a la finestra de puntuació
             discCWindow.SetActive(false);
             punctuationWindow.SetActive(true);
+            //Torna tot al seu estat inicial
             for (int i = 0; i<28; i++)
             {
                 songCards[i].gameObject.SetActive(false);
@@ -160,8 +167,10 @@ public class DiscCreation : MonoBehaviour
             costText.gameObject.SetActive(false);
             costNumber.gameObject.SetActive(false);
             backButton.SetActive(true);
-            gameManager.GetComponent<Time>().moneyGained = -cost;
-            gameManager.GetComponent<Time>().setMoneyText();
+           
+            gameManager.GetComponent<Time>().moneyGained = -cost; //Cambia la variable de diners guanyats al cost en negatiu
+            gameManager.GetComponent<Time>().setMoneyText(); //Cambia el text de diners
+            //Depenent de la puntuació el jugador gunaya mes o menys diners.
             if (finalScore < 5)
             {
                 gameManager.GetComponent<Time>().moneyGained = 1000;
@@ -187,6 +196,7 @@ public class DiscCreation : MonoBehaviour
         }
     }
 
+    //Mostra el cost a l'usuari
     void changeCostText()
     {
         costNumber.text = cost.ToString() + "$";

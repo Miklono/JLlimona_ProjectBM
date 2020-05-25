@@ -43,6 +43,7 @@ public class DropdownTest : MonoBehaviour
         
     }
 
+    //Cambia les cartes actives depenet de lel que posem en el dropdown
     void changeCards()
     {
         if (changeCaract.value == 0)

@@ -18,6 +18,6 @@ public class ShowSliderValueTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        textSlideValue.text = slider.value.ToString("0");
+        textSlideValue.text = slider.value.ToString("0"); //Canvia el nombre per el valor de la barra
     }
 }

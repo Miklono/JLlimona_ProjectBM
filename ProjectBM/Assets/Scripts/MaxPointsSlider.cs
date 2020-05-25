@@ -22,6 +22,7 @@ public class MaxPointsSlider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //A la creació de cançó si l'usauri tria mes de 20 punts el text cambia a vermell i torna a la normalitat quan el nombre de punt baixa de 20
         totalPoints = (int)(sliders[0].value + sliders[1].value + sliders[2].value + sliders[3].value);
         pointsText.text = totalPoints.ToString();
         if(totalPoints > maxPoints)

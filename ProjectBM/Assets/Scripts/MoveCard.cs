@@ -35,18 +35,21 @@ public class MoveCard : MonoBehaviour
         money = gameManager.GetComponent<Time>().money;
     }
 
+    //Mou la carta a de la pestanya de contractació a la administració
     void TaskOnClick()
     {
-        if (!isOnCreation && money >= cost)
+        if (!isOnCreation && money >= cost) //Nomes ho fa si el jugador te els diners requerits
         {
             isContracted = true;
             card.SetParent(windows1, false);
             contract.SetActive(false);
-            gameManager.GetComponent<Time>().moneyGained = -cost;
+            //Redueix els diners al jugador
+            gameManager.GetComponent<Time>().moneyGained = -cost; 
             gameManager.GetComponent<Time>().setMoneyText();
         }
     }
 
+    //Torna la carta a l'estat anterior a la creació de la canço
     public void songCreated()
     {
         if (isChoosed)

@@ -7,7 +7,6 @@ public class ChangeView : MonoBehaviour
 {
     //Variables 
     public Button changeToContract, changeToManagement, changeToCreation, changeToMenuC, changeToMenuM, changeToMenuCre, changeToSongC, changeToStat, changeToSSong, changeToMenuStat, changeToStatSong, changeToDiscC;
-    //changeToMenuC = Contract Windos. changeToMenuM = Band Management. ChangeToMenuCre = Creation Windows
     public GameObject mainWindow, contractWindow, managementWindow, creationWindow, songCWinwod, statWindow, songStat, SCWindow;
     public GameObject dropdownMenu;
     public Transform singCard, singCard1, singCard2, singCard3, guitarCard, guitarCard1, guitarCard2, guitarCard3, bassCard, bassCard1, bassCard2, bassCard3, drumCard, drumCard1, drumCard2, drumCard3;
@@ -28,6 +27,7 @@ public class ChangeView : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Crida la funcio requerida depenent del buto clicat
         dropdownMenu.GetComponent<Dropdown>();
         changeToContract.onClick.AddListener(ChangeContract);
         changeToMenuC.onClick.AddListener(ChangeContract);
@@ -50,6 +50,7 @@ public class ChangeView : MonoBehaviour
 
     }
 
+    //Cambia a la finestra de contractacio o al menu principal.
     void ChangeContract()
     {
         isShowingC = !isShowingC;
@@ -59,6 +60,7 @@ public class ChangeView : MonoBehaviour
         
     }
 
+    //Cambia a la finestra de administació o al menu principal.
     void ChangeManagement()
     {
         isShowingM = !isShowingM;
@@ -67,15 +69,18 @@ public class ChangeView : MonoBehaviour
         dropdownMenu.SetActive(isShowingM);
     }
 
+    //Cambia a la finestra de creació o al menu principal.
     void ChangeCreation()
     {
         isShowingCre = !isShowingCre;
         creationWindow.SetActive(isShowingCre);
         mainWindow.SetActive(!isShowingCre);
     }
+
+    //Cambia a la finestra de creacio de canço
     void ChangeSCreation()
     {
-        i = 0;
+        i = 0; //No se perque aixo, pero no vull tocar
 
         isShowingSC = !isShowingSC;
         songCWinwod.SetActive(isShowingSC);
@@ -84,6 +89,7 @@ public class ChangeView : MonoBehaviour
         bassWindow.SetActive(!isShowingSC);
         drumWindow.SetActive(!isShowingSC);
         creationWindow.SetActive(!isShowingSC);
+        //Si la carta esta contractada, la mouv a la finestra que li pertoca i activa el buto. Ho fa per totes les cartes existents
         if (singCard.GetComponent<MoveCard>().isContracted)
         {
             singCard.SetParent(singWindow.transform, false);
@@ -267,11 +273,13 @@ public class ChangeView : MonoBehaviour
         }
     }
 
+    //Cambia a la finestra d'estats o torna al menu principal
     void ChangeStat()
     {
         isShowingStat = !isShowingStat;
         mainWindow.SetActive(!isShowingStat);
         statWindow.SetActive(isShowingStat);
+        //Activa l'obejta on es guardan les cançons si estan guardades
         for(int i = 0; i < 28; i++)
         {
             if (gameManager.GetComponent<SongCreation>().isSaved[i])
@@ -281,6 +289,7 @@ public class ChangeView : MonoBehaviour
         }
     }
 
+    //Cambia a la finestra on es guarden les cançons o torna a la finestra d'estats
     void ChangeSSong()
     {
         isShowingSSong = !isShowingSSong;
@@ -289,6 +298,7 @@ public class ChangeView : MonoBehaviour
         
     }
 
+    //Diu que la carta ha estat triada i guarda la variable talent per ferla servir a la creació de cançons
     void CardChoosen(GameObject card)
     {
         card.GetComponent<MoveCard>().isChoosed = true;
@@ -296,6 +306,7 @@ public class ChangeView : MonoBehaviour
         i = i + 1;
     }
 
+    //A la finestra de creació de cançó, cambia al de la finestra on escull el cantant a on esculls al guitarrista
     void ChangStoG()
     {
         singWindow.SetActive(false);
@@ -322,6 +333,7 @@ public class ChangeView : MonoBehaviour
         }
     }
 
+    //A la finestra de creació de cançó, cambia al de la finestra on escull el guitarrista a on esculls al baixista
     void ChangeGtoB()
     {
         guitarWindow.SetActive(false);
@@ -348,6 +360,7 @@ public class ChangeView : MonoBehaviour
         }
     }
 
+    //A la finestra de creació de cançó, cambia al de la finestra on escull el baixista a on esculls al bateria
     void ChangeBtoD()
     {
         bassWindow.SetActive(false);
@@ -376,6 +389,7 @@ public class ChangeView : MonoBehaviour
 
     }
 
+    //A la finestra de creació de cançó, cambia al de la finestra on escull el bateria a la creació de la cançó
     void ChangeDtoSC()
     {
         drumCard.gameObject.SetActive(false);
@@ -387,9 +401,11 @@ public class ChangeView : MonoBehaviour
         gameManager.GetComponent<SongCreation>().enabled = true;
     }
 
+    //Cambia a la creació de disc
     void ChangeDiscC()
     {
         isShowingDiscC = !isShowingDiscC;
+        //Activa o desactiva les cançons depenent si estan guardades o no
         for (int i = 0; i < 28; i++)
         {
             if (gameManager.GetComponent<SongCreation>().isSaved[i])
@@ -408,7 +424,8 @@ public class ChangeView : MonoBehaviour
         gameManager.GetComponent<DiscCreation>().songsChoosed = 0;
         gameManager.GetComponent<DiscCreation>().changeSongText();
         creationWindow.SetActive(!isShowingDiscC);
-        songStat.SetActive(isShowingDiscC);
+        //La finestra de crea un disc es la mateixa que els estats pero amb UI diferent.
+        songStat.SetActive(isShowingDiscC); 
         backButton.gameObject.SetActive(!isShowingDiscC);
         backCreation.gameObject.SetActive(isShowingDiscC);
         discQText.SetActive(isShowingDiscC);

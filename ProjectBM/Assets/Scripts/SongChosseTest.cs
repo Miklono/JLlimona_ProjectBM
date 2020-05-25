@@ -24,6 +24,7 @@ public class SongChosseTest : MonoBehaviour
         
     }
 
+    //Cambia el color quan la carta es seleccionada
     void changeColor()
     {
  
@@ -39,6 +40,7 @@ public class SongChosseTest : MonoBehaviour
         }
     }
 
+    //Cambia el color de la carta al principal
     public void changeColorToDefault()
     {
         card.GetComponent<Image>().color = defaultColor;
